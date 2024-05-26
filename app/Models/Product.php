@@ -10,7 +10,7 @@ class Product extends Model
     use HasFactory;
 
    protected $fillable = [
-    'categoty_id',
+    'category_id',
     'brand_id',
     'name',
     'slug',
@@ -36,4 +36,7 @@ class Product extends Model
    public function orderItems(){
     return $this->hasMany(OrderItem::class);
    }
+    public function order(){
+        return $this->hasMany(Order::class);
+    }
 }
